@@ -11,17 +11,66 @@
 </head>
 
 <body>
-    <section id="login-area">
-        <h1 class="text-center">Welcome to PQ Bank </h1>
-        <div class="submit-area">
-            <h4>Login</h4>
-            <input type="text" class="form-control" placeholder="Enter your email">
-            <br>
-            <input type="password" class="form-control" placeholder="Enter your password">
-            <br>
-            <button id="button" class="btn btn-success">Enter</button>
+    <!-- LogIn Area -->
+    <section id="login-area" class="container">
+        <div class="d-flex justify-content-center">
+            <img src="bank-logo.png" class="img-fluid max-width: 100%;height:auto;" alt="">
         </div>
+        <h1 class="text-center">Welcome to PQ Bank </h1>
+        <div class="d-flex justify-content-center">
+            <div class="submit-area">
+                <h4>Login</h4>
+                <input type="text" class="form-control" placeholder="Enter your email">
+                <br>
+                <input type="password" class="form-control" placeholder="Enter your password">
+                <br>
+                <button id="button" class="btn btn-success">Enter</button>
+            </div>
+        </div>
+    </section>
+    <!-- Transaction Area -->
+    <section id="transaction-area" class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="deposit common-item text-center">
+                    <h5>Deposit</h5>
+                    <h2>$ <span id="current-deposit">00</span></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw common-item text-center">
+                    <h5>withdraw</h5>
+                    <h2>$ <span id="current-withdraw">00</span></h2>
+                </div>
 
+            </div>
+            <div class="col-md-4">
+                <div class="balance common-item text-center">
+                    <h5>Balance</h5>
+                    <h2>$ <span id="balance">00</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="add-amount-area common-item2">
+                    <h5>Deposit</h5>
+                    <input id="amountPlace" type="number" placeholder="$ amount you want to deposit"
+                        class="form-control">
+                    <br>
+                    <button id="deposit-btn" class="btn btn-success mt-3">Deposit</button>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="add-amount-area common-item2">
+                    <h5>withdraw</h5>
+                    <input id="withdrawPlace" type="number" placeholder="$ amount you want to withdraw" class="form-control">
+                    <br>
+                    <button id="click-withdraw" class="btn btn-success mt-3">Withdraw</button>
+                </div>
+            </div>
+        </div>
     </section>
     <script src="script.js"></script>
 </body>

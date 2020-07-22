@@ -1,9 +1,37 @@
 body{
     padding: 100px;
 }
+/* LogIn Area */
 .submit-area{
-    margin-top: 50px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px gray;
-    padding: 40px;
+    padding: 100px;
+    width: 55%;
+}
+/* Transaction Area */
+#transaction-area{
+    display: none;
+}
+.deposit{
+    background-color: slateblue;
+}
+.withdraw{
+    background-color: lightsalmon;
+}
+.balance{
+    background-color: orange;
+}
+.common-item{
+    color: wheat;
+    padding: 35px 0px;
+    border-radius: 10px;
+}
+/* add-amount-area */
+.add-amount-area{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+}
+.common-item2{
+    margin: 82px 68px;
+    padding: 11px 17px
 }
