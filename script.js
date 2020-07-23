@@ -8,41 +8,38 @@ loginButton.addEventListener('click', function () {
 })
 
 //transaction deposit button event handler
-function update(p, id){
-    const CurrentDeposit = document.getElementById(id).innerText;
-    const updateCurrentDeposit = parseFloat(CurrentDeposit);
-    const totalCurrentDeposit = p + updateCurrentDeposit;
-    document.getElementById(id).innerText = totalCurrentDeposit;
-}
 const depositBtn = document.getElementById('deposit-btn');
 depositBtn.addEventListener('click', function () {
-    const clickNewAmount = document.getElementById('amountPlace').value;
-    const clickedDepositNumberAmount = parseFloat(clickNewAmount);
+ const clickedDepositNumberAmount =  convertAmount('deposit-amount')
 
-    update(clickedDepositNumberAmount, 'current-deposit')
-    update(clickedDepositNumberAmount, 'balance')
+ displayAmount(clickedDepositNumberAmount, 'current-deposit')
+ displayAmount(clickedDepositNumberAmount, 'balance')
 })
-
 
 // transaction withdraw button event handler
-const withdrawBtn = document.getElementById('click-withdraw');
+const withdrawBtn = document.getElementById('withdraw-btn');
 withdrawBtn.addEventListener('click', function(){
-    const clickAmount = document.getElementById('withdrawPlace').value;
-    const clickedDepositAmount = parseFloat(clickAmount);
-
-    const currentWithdraw = document.getElementById('current-withdraw').innerText;
-    const currentAmountConvertToNumber = parseFloat(currentWithdraw);
-    const totalWithdraw = clickedDepositAmount + currentAmountConvertToNumber;
-
-    document.getElementById('current-withdraw').innerText = totalWithdraw;
-    document.getElementById('withdrawPlace').value = '';
-
-
-    const currentBalance = document.getElementById('total-balance').innerText;
-    const newBalance = parseFloat(currentBalance);
-    const totalBalance = newBalance - totalWithdraw
-
-    document.getElementById('total-balance').innerText = totalBalance;
-
-
+ const totalClickWithdraw = convertAmount('withdraw-amount')
+ displayAmount(totalClickWithdraw, 'withdraw')
+ displayAmount(-1 * totalClickWithdraw, 'balance')
 })
+
+
+
+function convertAmount (id){
+    const stringAmount = document.getElementById(id).value;
+    const numAmount = parseFloat(stringAmount);
+    document.getElementById(id).value="";
+    return numAmount;
+}
+
+function displayAmount(deposit, id){
+    const currentAmount = document.getElementById(id).innerText;
+    const currentAmountNumber = parseFloat(currentAmount);
+    const totalAmount = deposit + currentAmountNumber;
+    document.getElementById(id).innerText = totalAmount;
+}
+
+
+
+
